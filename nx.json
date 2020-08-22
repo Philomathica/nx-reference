@@ -31,6 +31,9 @@
     "demo-angular-web-e2e": {
       "tags": [],
       "implicitDependencies": ["demo-angular-web"]
+    },
+    "demo-api": {
+      "tags": ["scope:demo", "type:app"]
     }
   }
 }

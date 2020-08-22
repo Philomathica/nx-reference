@@ -125,6 +125,62 @@
           }
         }
       }
+    },
+    "demo-api": {
+      "root": "apps/demo-api",
+      "sourceRoot": "apps/demo-api/src",
+      "projectType": "application",
+      "prefix": "demo-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/demo-api",
+            "main": "apps/demo-api/src/main.ts",
+            "tsConfig": "apps/demo-api/tsconfig.app.json",
+            "assets": ["apps/demo-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo-api/src/environments/environment.ts",
+                  "with": "apps/demo-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "demo-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/demo-api/tsconfig.app.json",
+              "apps/demo-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/demo-api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/demo-api/jest.config.js",
+            "tsConfig": "apps/demo-api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
