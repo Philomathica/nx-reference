@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { SharedApiHealthController } from './shared-api-health.controller';
+import { SharedApiHealthController } from './controllers/shared-api-health.controller';
 import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
@@ -9,4 +9,4 @@ import { TerminusModule } from '@nestjs/terminus';
   providers: [],
   exports: [],
 })
-export class SharedApiHealthModule {}
+export class SharedApiModule {}
