@@ -1,7 +1,9 @@
 version: '3.7'
 services:
-  demo-dynamodb-local:
-    image: amazon/dynamodb-local:latest
-    container_name: demo-dynamodb-local
+  demo-db:
+    image: mongo
+    restart: always
     ports:
-      - '8000:8000'
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: demo

@@ -1,1 +1,1 @@
-export * from './lib/sensor';
+export * from './lib';
