@@ -181,6 +181,63 @@
           }
         }
       }
+    },
+    "demo-api-sensors-api": {
+      "root": "libs/demo-api/sensors/api",
+      "sourceRoot": "libs/demo-api/sensors/api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/demo-api/sensors/api/tsconfig.lib.json",
+              "libs/demo-api/sensors/api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/demo-api/sensors/api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/demo-api/sensors/api/jest.config.js",
+            "tsConfig": "libs/demo-api/sensors/api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-api-sensors-interfaces": {
+      "root": "libs/demo-api/sensors/interfaces",
+      "sourceRoot": "libs/demo-api/sensors/interfaces/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/demo-api/sensors/interfaces/tsconfig.lib.json",
+              "libs/demo-api/sensors/interfaces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-api/sensors/interfaces/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/demo-api/sensors/interfaces/jest.config.js",
+            "tsConfig": "libs/demo-api/sensors/interfaces/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -15,7 +15,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-reference/demo-api/sensors/api": [
+        "libs/demo-api/sensors/api/src/index.ts"
+      ],
+      "@nx-reference/demo-api/sensors/interfaces": [
+        "libs/demo-api/sensors/interfaces/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
