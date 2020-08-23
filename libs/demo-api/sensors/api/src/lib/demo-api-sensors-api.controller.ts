@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
 import { ApiTags, ApiOkResponse, ApiNotFoundResponse, ApiParam } from '@nestjs/swagger';
+import { PaginationQueryDto } from '@nx-reference/shared/api';
 import { Observable } from 'rxjs';
 
 import { DemoApiSensorsApiService } from './demo-api-sensors-api.service';
@@ -13,8 +14,8 @@ export class DemoApiSensorsApiController {
 
   @Get()
   @ApiOkResponse({ type: [SensorDto] })
-  findAll(): Observable<SensorDto[]> {
-    return this.demoApiSensorsApiService.findAll();
+  findAll(paginationQuery: PaginationQueryDto): Observable<SensorDto[]> {
+    return this.demoApiSensorsApiService.findAll(paginationQuery);
   }
 
   @Get(':id')

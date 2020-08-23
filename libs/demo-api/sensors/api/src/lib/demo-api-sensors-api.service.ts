@@ -4,6 +4,7 @@ import { plainToClass } from 'class-transformer';
 import { Model } from 'mongoose';
 import { Observable, from } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { PaginationQueryDto } from '@nx-reference/shared/api';
 
 import { SensorEntity } from './entities';
 import { CreateSensorDto, SensorDto, UpdateSensorDto } from './dto';
@@ -15,8 +16,10 @@ export class DemoApiSensorsApiService {
     private readonly sensorModel: Model<SensorEntity>,
   ) {}
 
-  findAll(): Observable<SensorDto[]> {
-    return from(this.sensorModel.find().exec()).pipe(map(this.mapToSensorList));
+  findAll(paginationQuery: PaginationQueryDto): Observable<SensorDto[]> {
+    const { limit, offset } = paginationQuery;
+
+    return from(this.sensorModel.find({ skip: offset, take: limit }).exec()).pipe(map(this.mapToSensorList));
   }
 
   findOne(id: string): Observable<SensorDto> {
