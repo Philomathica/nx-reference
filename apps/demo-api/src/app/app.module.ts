@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule, ConfigType, ConfigService } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { DemoApiSensorsApiModule } from '@nx-reference/demo-api/sensors/api';
 import { SharedApiModule } from '@nx-reference/shared/api';
