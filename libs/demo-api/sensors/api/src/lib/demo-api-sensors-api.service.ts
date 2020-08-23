@@ -1,36 +1,60 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { plainToClass } from 'class-transformer';
 import { Model } from 'mongoose';
 import { Observable, from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { SensorEntity } from './entities';
-import { CreateSensorDto } from './dto';
-import { SensorDto } from './dto/sensor.dto';
+import { CreateSensorDto, SensorDto, UpdateSensorDto } from './dto';
 
 @Injectable()
 export class DemoApiSensorsApiService {
   constructor(
     @InjectModel(SensorEntity.name)
-    private readonly sensorModel: Model<SensorEntity>
+    private readonly sensorModel: Model<SensorEntity>,
   ) {}
 
   findAll(): Observable<SensorDto[]> {
     return from(this.sensorModel.find().exec()).pipe(map(this.mapToSensorList));
   }
 
+  findOne(id: string): Observable<SensorDto> {
+    return from(this.sensorModel.findOne({ _id: id }).exec()).pipe(
+      tap(this.handleNotFound),
+      map((sensor) => this.mapToSensor(sensor)),
+    );
+  }
+
   create(createSensorDto: CreateSensorDto): Observable<SensorDto> {
-    return from(new this.sensorModel(createSensorDto).save()).pipe(
-      map(this.mapToSensor)
+    return from(new this.sensorModel(createSensorDto).save()).pipe(map(this.mapToSensor));
+  }
+
+  update(id: string, updateCoffeeDto: UpdateSensorDto): Observable<SensorDto> {
+    return from(this.sensorModel.findOneAndUpdate({ _id: id }, { $set: updateCoffeeDto }, { new: true }).exec()).pipe(
+      tap(this.handleNotFound),
+      map((sensor) => this.mapToSensor(sensor)),
+    );
+  }
+
+  remove(id: string): Observable<SensorDto> {
+    return from(this.sensorModel.findOneAndDelete({ _id: id }).exec()).pipe(
+      tap(this.handleNotFound),
+      map((sensor) => this.mapToSensor(sensor)),
     );
   }
 
   private mapToSensorList(sensorEntities: SensorEntity[]): SensorDto[] {
-    return plainToClass(SensorDto, sensorEntities);
+    return plainToClass<SensorDto, SensorEntity>(SensorDto, sensorEntities);
   }
 
   private mapToSensor(sensorEntities: SensorEntity): SensorDto {
-    return plainToClass(SensorDto, sensorEntities);
+    return plainToClass<SensorDto, SensorEntity>(SensorDto, sensorEntities);
+  }
+
+  private handleNotFound(sensorEntity: SensorEntity): void {
+    if (sensorEntity === null) {
+      throw new NotFoundException(`Sensor not found`);
+    }
   }
 }

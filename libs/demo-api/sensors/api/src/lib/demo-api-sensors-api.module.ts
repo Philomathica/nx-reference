@@ -5,11 +5,7 @@ import { DemoApiSensorsApiController } from './demo-api-sensors-api.controller';
 import { SensorEntity, SensorEntitySchema } from './entities';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([
-      { name: SensorEntity.name, schema: SensorEntitySchema },
-    ]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: SensorEntity.name, schema: SensorEntitySchema }])],
   controllers: [DemoApiSensorsApiController],
   providers: [DemoApiSensorsApiService],
   exports: [DemoApiSensorsApiService],

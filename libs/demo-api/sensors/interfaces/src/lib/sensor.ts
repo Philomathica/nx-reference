@@ -1,6 +1,5 @@
 export interface Sensor {
-  readonly _id: string;
-
+  readonly id: string;
   readonly name: string;
   readonly value: string;
 }
