@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 
-export default () => ({
+export default registerAs('app', () => ({
   environment: process.env.NODE_ENV || 'development',
   port: +process.env.PORT || 3333,
   globalPathPrefix: 'api',
@@ -8,4 +8,4 @@ export default () => ({
   database: {
     uri: process.env.DATABASE_URI,
   },
-});
+}));

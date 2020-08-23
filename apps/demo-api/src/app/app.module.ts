@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule, ConfigType } from '@nestjs/config';
 
 import { DemoApiSensorsApiModule } from '@nx-reference/demo-api/sensors/api';
 import { SharedApiModule } from '@nx-reference/shared/api';
@@ -13,13 +13,11 @@ import appConfig from '../config/app.config';
     SharedApiModule,
     ConfigModule.forRoot({
       load: [appConfig],
+      isGlobal: true,
     }),
     MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => ({
-        uri: configService.get('database.uri'),
-      }),
+      inject: [appConfig.KEY],
+      useFactory: (appConfiguration: ConfigType<typeof appConfig>) => ({ uri: appConfiguration.database.uri }),
     }),
   ],
 })

@@ -1,16 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import {
-  HealthCheck,
-  MongooseHealthIndicator,
-  HealthCheckService,
-} from '@nestjs/terminus';
+import { HealthCheck, MongooseHealthIndicator, HealthCheckService } from '@nestjs/terminus';
 
 @Controller('health')
 export class SharedApiHealthController {
-  constructor(
-    private health: HealthCheckService,
-    private mongoose: MongooseHealthIndicator
-  ) {}
+  constructor(private health: HealthCheckService, private mongoose: MongooseHealthIndicator) {}
 
   @Get()
   @HealthCheck()
