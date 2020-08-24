@@ -10,30 +10,16 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-reference/demo-api/sensors/api": [
-        "libs/demo-api/sensors/api/src/index.ts"
-      ],
-      "@nx-reference/demo-api/sensors/interfaces": [
-        "libs/demo-api/sensors/interfaces/src/index.ts"
-      ],
-      "@nx-reference/shared/api": [
-        "libs/shared/api/src/index.ts"
-      ]
+      "@nx-reference/demo-api/sensors/api": ["libs/demo-api/sensors/api/src/index.ts"],
+      "@nx-reference/demo-api/sensors/interfaces": ["libs/demo-api/sensors/interfaces/src/index.ts"],
+      "@nx-reference/shared/api": ["libs/shared/api/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
