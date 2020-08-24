@@ -1,4 +1,12 @@
-# Project structure
+# Prerequisites
+
+- Install Node
+- Install Yarn
+- Install Docker
+
+Copy and rename .env-example to .env and provide values
+
+## Project structure
 
 - apps
   - demo-angular-web
@@ -47,13 +55,3 @@
     - shared
       - util
       - ui
-
-## Running cypress tests demo api
-
-First you need to add cypress.env.json to root of demo-api-e2e project
-
-{
-  "DEMO_API_BASE_URL": "http://localhost:3333/api"
-}
-
-$ yarn ng e2e demo-api-e2e --watch --headless=false
