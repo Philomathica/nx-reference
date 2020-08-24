@@ -8,7 +8,7 @@ import { CreateSensorDto, UpdateSensorDto } from './dto';
 import { SensorDto } from './dto/sensor.dto';
 
 @Controller('sensors')
-@ApiTags('coffees')
+@ApiTags('sensors')
 export class DemoApiSensorsApiController {
   constructor(private readonly demoApiSensorsApiService: DemoApiSensorsApiService) {}
 
