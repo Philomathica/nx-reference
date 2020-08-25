@@ -4,13 +4,14 @@ import { PaginationQueryDto } from '@nx-reference/shared/api';
 import { Observable } from 'rxjs';
 
 import { DemoApiSensorsApiService } from './demo-api-sensors-api.service';
-import { CreateSensorDto, UpdateSensorDto } from './dto';
+import { UpdateSensorDto, RegisterSensorDto } from './dto';
 import { SensorDto } from './dto/sensor.dto';
+import { DemoApiSensorsApiCqrsService } from './demo-api-sensors-api-cqrs.service';
 
 @Controller('sensors')
 @ApiTags('sensors')
 export class DemoApiSensorsApiController {
-  constructor(private readonly demoApiSensorsApiService: DemoApiSensorsApiService) {}
+  constructor(private readonly demoApiSensorsApiService: DemoApiSensorsApiService, private demoApiSensorsApiCqrsService: DemoApiSensorsApiCqrsService) {}
 
   @Get()
   @ApiOkResponse({ type: [SensorDto] })
@@ -25,11 +26,11 @@ export class DemoApiSensorsApiController {
     return this.demoApiSensorsApiService.findOne(id);
   }
 
-  @Post()
-  @ApiOkResponse({ type: SensorDto })
-  create(@Body() createSensorDto: CreateSensorDto): Observable<SensorDto> {
-    return this.demoApiSensorsApiService.create(createSensorDto);
-  }
+  // @Post()
+  // @ApiOkResponse({ type: SensorDto })
+  // create(@Body() createSensorDto: CreateSensorDto): Observable<SensorDto> {
+  //   return this.demoApiSensorsApiService.create(createSensorDto);
+  // }
 
   @Patch(':id')
   @ApiOkResponse({ type: SensorDto })
@@ -43,5 +44,11 @@ export class DemoApiSensorsApiController {
   @ApiNotFoundResponse()
   remove(@Param('id') id: string): Observable<SensorDto> {
     return this.demoApiSensorsApiService.remove(id);
+  }
+
+  @Post('register')
+  @ApiOkResponse({ type: String })
+  register(@Body() registerSensorDto: RegisterSensorDto): Observable<string> {
+    return this.demoApiSensorsApiCqrsService.register(registerSensorDto)
   }
 }
