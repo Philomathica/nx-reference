@@ -3,7 +3,7 @@ import { HealthCheck, MongooseHealthIndicator, HealthCheckService } from '@nestj
 
 @Controller('health')
 export class SharedApiHealthController {
-  constructor(private health: HealthCheckService, private mongoose: MongooseHealthIndicator) {}
+  constructor(private readonly health: HealthCheckService, private readonly mongoose: MongooseHealthIndicator) {}
 
   @Get()
   @HealthCheck()

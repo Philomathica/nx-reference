@@ -21,13 +21,8 @@
             "polyfills": "apps/demo-angular-web/src/polyfills.ts",
             "tsConfig": "apps/demo-angular-web/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/demo-angular-web/src/favicon.ico",
-              "apps/demo-angular-web/src/assets"
-            ],
-            "styles": [
-              "apps/demo-angular-web/src/styles.scss"
-            ],
+            "assets": ["apps/demo-angular-web/src/favicon.ico", "apps/demo-angular-web/src/assets"],
+            "styles": ["apps/demo-angular-web/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -81,14 +76,8 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": [
-              "apps/demo-angular-web/tsconfig.app.json",
-              "apps/demo-angular-web/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo-angular-web/**/*"
-            ],
+            "tsConfig": ["apps/demo-angular-web/tsconfig.app.json", "apps/demo-angular-web/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-angular-web/**/*"],
             "linter": "eslint"
           }
         },
@@ -125,13 +114,8 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": [
-              "apps/demo-angular-web-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo-angular-web-e2e/**/*"
-            ]
+            "tsConfig": ["apps/demo-angular-web-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-angular-web-e2e/**/*"]
           }
         }
       }
@@ -149,9 +133,7 @@
             "outputPath": "dist/apps/demo-api",
             "main": "apps/demo-api/src/main.ts",
             "tsConfig": "apps/demo-api/tsconfig.app.json",
-            "assets": [
-              "apps/demo-api/src/assets"
-            ]
+            "assets": ["apps/demo-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -177,14 +159,8 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": [
-              "apps/demo-api/tsconfig.app.json",
-              "apps/demo-api/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo-api/**/*"
-            ]
+            "tsConfig": ["apps/demo-api/tsconfig.app.json", "apps/demo-api/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-api/**/*"]
           }
         },
         "test": {
@@ -192,6 +168,58 @@
           "options": {
             "jestConfig": "apps/demo-api/jest.config.js",
             "tsConfig": "apps/demo-api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-api-e2e": {
+      "root": "apps/demo-api-e2e",
+      "sourceRoot": "apps/demo-api-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/demo-api-e2e/cypress.json",
+            "tsConfig": "apps/demo-api-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo-api:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo-api:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/demo-api-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-api-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "shared-api": {
+      "root": "libs/shared/api",
+      "sourceRoot": "libs/shared/api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/shared/api/tsconfig.lib.json", "libs/shared/api/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/api/jest.config.js",
+            "tsConfig": "libs/shared/api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -207,14 +235,8 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": [
-              "libs/demo-api/sensors/api/tsconfig.lib.json",
-              "libs/demo-api/sensors/api/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/demo-api/sensors/api/**/*"
-            ]
+            "tsConfig": ["libs/demo-api/sensors/api/tsconfig.lib.json", "libs/demo-api/sensors/api/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/demo-api/sensors/api/**/*"]
           }
         },
         "test": {
@@ -237,14 +259,8 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": [
-              "libs/demo-api/sensors/interfaces/tsconfig.lib.json",
-              "libs/demo-api/sensors/interfaces/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/demo-api/sensors/interfaces/**/*"
-            ]
+            "tsConfig": ["libs/demo-api/sensors/interfaces/tsconfig.lib.json", "libs/demo-api/sensors/interfaces/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/demo-api/sensors/interfaces/**/*"]
           }
         },
         "test": {
@@ -252,36 +268,6 @@
           "options": {
             "jestConfig": "libs/demo-api/sensors/interfaces/jest.config.js",
             "tsConfig": "libs/demo-api/sensors/interfaces/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-api": {
-      "root": "libs/shared/api",
-      "sourceRoot": "libs/shared/api/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/api/tsconfig.lib.json",
-              "libs/shared/api/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/api/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/api/jest.config.js",
-            "tsConfig": "libs/shared/api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

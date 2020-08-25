@@ -65,6 +65,10 @@
         "scope:shared",
         "type:api-feature"
       ]
+    },
+    "demo-api-e2e": {
+      "tags": [],
+      "implicitDependencies": []
     }
   }
 }
