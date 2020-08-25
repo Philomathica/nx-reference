@@ -1,10 +1,16 @@
-const demoApiBasUrl = Cypress.env('DEMO_API_BASE_URL');
-const getHealthResponse = () => cy.request(`${demoApiBasUrl}/health`);
-
 describe('SharedApiHealthController', () => {
-
+  const getHealth = () => cy.request('/health');
+  const healthResponse = { status: 'ok', info: { 'demo-db': { status: 'up' } }, error: {}, details: { 'demo-db': { status: 'up' } } };
 
   it('should return status ok', () => {
-    getHealthResponse().its('status').should('eq', 200);
+    getHealth().its('status').should('eq', 200);
+  });
+
+  it('returns JSON', () => {
+    getHealth().its('headers').its('content-type').should('include', 'application/json');
+  });
+
+  it('return health response', () => {
+    getHealth().its('body').should('deep.eq', healthResponse);
   });
 });
