@@ -1,6 +1,7 @@
 import { Module} from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
 import { MongooseModule } from '@nestjs/mongoose';
+import { EventSourcingModule } from 'event-sourcing-nestjs';
 import { DemoApiSensorsApiService } from './demo-api-sensors-api.service';
 import { DemoApiSensorsApiController } from './demo-api-sensors-api.controller';
 import { SensorEntity, SensorEntitySchema } from './entities';
@@ -11,7 +12,7 @@ import { DemoApiSensorsApiCqrsService } from './demo-api-sensors-api-cqrs.servic
 export const commandHandlers = [RegisterSensorCommandHandler];
 
 @Module({
-  imports: [CqrsModule, MongooseModule.forFeature([{ name: SensorEntity.name, schema: SensorEntitySchema }])],
+  imports: [CqrsModule, EventSourcingModule.forFeature(), MongooseModule.forFeature([{ name: SensorEntity.name, schema: SensorEntitySchema }])],
   controllers: [DemoApiSensorsApiController],
   providers: [DemoApiSensorsApiService, DemoApiSensorsApiCqrsService, ...commandHandlers],
   exports: [DemoApiSensorsApiService],

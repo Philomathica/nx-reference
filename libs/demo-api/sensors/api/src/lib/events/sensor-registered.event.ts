@@ -1,8 +1,13 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 
 import { Uom } from '@nx-reference/demo-api/sensors/interfaces';
-import { DomainEvent } from './domain-event';
+import { StorableEvent } from 'event-sourcing-nestjs';
 
-export class SensorRegisteredEvent implements DomainEvent {
-  constructor(public readonly aggregateId: string, public readonly time: Date, public readonly name: string, public readonly uom: Uom) {}
+export class SensorRegisteredEventV1 extends StorableEvent {
+  id = '_id_';
+  eventAggregate: 'Sensor';
+  eventVersion: 1;
+  eventName: 'SensorRegisteredEventV1';
+  name: string;
+  uom: Uom;
 }
