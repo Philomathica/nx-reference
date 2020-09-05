@@ -14,11 +14,14 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@nx-reference/demo-api/sensors/api": ["libs/demo-api/sensors/api/src/index.ts"],
       "@nx-reference/demo-api/sensors/interfaces": ["libs/demo-api/sensors/interfaces/src/index.ts"],
-      "@nx-reference/shared/api": ["libs/shared/api/src/index.ts"]
+      "@nx-reference/shared/api": ["libs/shared/api/src/index.ts"],
+      "@nx-reference/demo-api/sensors/fixtures": ["libs/demo-api/sensors/fixtures/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

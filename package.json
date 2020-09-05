@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prestart:demo": "docker-compose up -d && node tools/scripts/seed.js",
     "start:demo": "nx run-many --target=serve --projects=demo-angular-web,demo-api --parallel",
+    "db-demo-api:seed": "ts-node --project=tools/scripts/db/tsconfig.json -r tsconfig-paths/register tools/scripts/db/demo-api/seed",
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
     "start": "ng serve",
     "build": "ng build",
@@ -27,7 +26,9 @@
     "update": "ng update @nrwl/workspace",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "prestart:demo": "docker-compose up -d && yarn install && yarn db-demo-api:seed"
   },
   "private": true,
   "dependencies": {
@@ -73,6 +74,7 @@
     "@types/jest": "26.0.8",
     "@types/mongoose": "^5.7.36",
     "@types/node": "~8.9.4",
+    "@types/pluralize": "^0.0.29",
     "@typescript-eslint/eslint-plugin": "2.19.2",
     "@typescript-eslint/parser": "2.19.2",
     "codelyzer": "~5.0.1",

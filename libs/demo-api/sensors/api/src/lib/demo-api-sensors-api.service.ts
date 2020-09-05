@@ -19,7 +19,7 @@ export class DemoApiSensorsApiService {
   findAll(paginationQuery: PaginationQueryDto): Observable<SensorDto[]> {
     const { limit, offset } = paginationQuery;
 
-    return from(this.sensorModel.find({ skip: offset, take: limit }).exec()).pipe(map(this.mapToSensorList));
+    return from(this.sensorModel.find().skip(offset).limit(limit).exec()).pipe(map(this.mapToSensorList));
   }
 
   findOne(id: string): Observable<SensorDto> {

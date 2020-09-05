@@ -6,6 +6,6 @@ export default registerAs('app', () => ({
   globalPathPrefix: 'api',
   swaggerPath: 'docs',
   database: {
-    uri: process.env.DATABASE_URI,
+    uri: process.env.DATABASE_SENSORS_URI,
   },
 }));
