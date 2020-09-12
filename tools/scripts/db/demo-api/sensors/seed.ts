@@ -5,7 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule, getModelToken } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
-import { createSensor, createDemoSensors } from '@nx-reference/demo-api/sensors/fixtures';
+import { createDemoSensors } from '@nx-reference/demo-api/sensors/fixtures';
 
 @Module({ imports: [ConfigModule.forRoot(), DemoApiSensorsApiModule, MongooseModule.forRoot(process.env.DATABASE_SENSORS_URI)] })
 class AppModule {}
