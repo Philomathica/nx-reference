@@ -1595,6 +1595,34 @@
     optional "0.1.4"
     tslib "2.0.1"
 
+"@ngrx/component-store@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-10.0.0.tgz#c8604d5ce57a53e6f43ff41a70dece3b21a43574"
+  integrity sha512-m4AvA9I0aAazPERkbyPJzhQzrnbLfzkpgAIDjNDX0jYfPx10F0AYbXsKiqCEcIWSbikhqac5NXTduKyidZzn3g==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/router-store@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-10.0.0.tgz#e162e69da138f5a3e2d194f9e81d76d117cd2124"
+  integrity sha512-naK+IlgTQNEWWlKndQIBS/EQZ2h3pRF4owF+4kVpn+OI5Il7+Nugf0spj+0IFGd21Z7YvBe9C54SQPOPP4HARg==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store-devtools@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-10.0.0.tgz#018716afd3df89bd2fa1f603966878f82e80d727"
+  integrity sha512-+7SSPW9H+IdGX04QYmfgqYOeFM++PLD6CxGRUkIIc+6jFovanMS6CVKw6V+WeerPwoZaRn43cMIDj9FChMQ4oA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-10.0.0.tgz#a355f0fdf6129b78b82fb57cacdb277bde0de066"
+  integrity sha512-+mhTGJXjc+55KI1pWV5SSuP+JBAr35U1AbnBYJqqXuwJVXnJ8+n6gAr06qpPN+YMf+zRQDFwAIrqyFOfMqeJHg==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@10.1.1":
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-10.1.1.tgz#28c907f58ec352bc983eeca97205757c8660ed65"
@@ -4949,10 +4977,10 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
 
-eslint@7.8.1:
-  version "7.8.1"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.8.1.tgz#e59de3573fb6a5be8ff526c791571646d124a8fa"
-  integrity sha512-/2rX2pfhyUG0y+A123d0ccXtMm7DV7sH1m3lk9nk2DZ2LReq39FXHueR9xZwshE5MdfSf0xunSaMWRqyIA6M1w==
+eslint@7.9.0:
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.9.0.tgz#522aeccc5c3a19017cf0cb46ebfd660a79acf337"
+  integrity sha512-V6QyhX21+uXp4T+3nrNfI3hQNBDa/P8ga7LoQOenwrlEFXrEnUEE+ok1dMtaS3b6rmLXhT1TkTIsG75HMLbknA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@eslint/eslintrc" "^0.1.3"

@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Patch, Delete, Query } from '@nestjs/common';
 import { ApiTags, ApiOkResponse, ApiNotFoundResponse } from '@nestjs/swagger';
-import { PaginationQueryDto } from '@nx-reference/shared/api';
+import { PaginationQueryDto } from '@nx-reference/shared/api/core';
 import { Observable } from 'rxjs';
 
 import { DemoApiSensorsApiService } from './demo-api-sensors-api.service';

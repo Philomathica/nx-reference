@@ -1,0 +1,25 @@
+<p>Sensor details</p>
+
+<div *ngIf="loading$ | async">loading...</div>
+
+<div *ngIf="sensor$ | async as sensor">
+  <div>
+    <label for="id">Id</label>
+    <input name="id" disabled [value]="sensor.id" />
+  </div>
+
+  <div>
+    <label for="name">Name</label>
+    <input name="name" disabled [value]="sensor.name" />
+  </div>
+
+  <div>
+    <label for="type">Type</label>
+    <input name="type" disabled [value]="sensor.type" />
+  </div>
+
+  <div>
+    <label for="value">Value</label>
+    <input name="value" disabled [value]="sensor.value || ''" />
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<p>Sensor overview</p>
+
+<div *ngIf="loading$ | async">loading...</div>
+
+<div *ngFor="let sensor of sensors$ | async">
+  <a [routerLink]="['/sensors', sensor.id]"> {{ sensor.type }} - {{ sensor.name }} </a>
+</div>

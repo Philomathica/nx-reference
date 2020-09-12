@@ -10,19 +10,68 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-reference/demo-api/sensors/api": ["libs/demo-api/sensors/api/src/index.ts"],
-      "@nx-reference/demo-api/sensors/interfaces": ["libs/demo-api/sensors/interfaces/src/index.ts"],
-      "@nx-reference/shared/api": ["libs/shared/api/src/index.ts"],
-      "@nx-reference/demo-api/sensors/fixtures": ["libs/demo-api/sensors/fixtures/src/index.ts"]
+      "@nx-reference/demo-api/sensors/api": [
+        "libs/demo-api/sensors/api/src/index.ts"
+      ],
+      "@nx-reference/demo-api/sensors/interfaces": [
+        "libs/demo-api/sensors/interfaces/src/index.ts"
+      ],
+      "@nx-reference/demo-api/sensors/fixtures": [
+        "libs/demo-api/sensors/fixtures/src/index.ts"
+      ],
+      "@nx-reference/demo-angular/sensors/feature-shell": [
+        "libs/demo-angular/sensors/feature-shell/src/index.ts"
+      ],
+      "@nx-reference/shared/sensors/data-access": [
+        "libs/shared/sensors/data-access/src/index.ts"
+      ],
+      "@nx-reference/shared/sensors/ui": [
+        "libs/shared/sensors/ui/src/index.ts"
+      ],
+      "@nx-reference/shared/api/core": [
+        "libs/shared/api/core/src/index.ts"
+      ],
+      "@nx-reference/shared/api/interfaces": [
+        "libs/shared/api/interfaces/src/index.ts"
+      ],
+      "@nx-reference/demo-angular/sensors/feature-sensor-details": [
+        "libs/demo-angular/sensors/feature-sensor-details/src/index.ts"
+      ],
+      "@nx-reference/shared/custom-router/data-access": [
+        "libs/shared/custom-router/data-access/src/index.ts"
+      ],
+      "@nx-reference/shared/core": [
+        "libs/shared/core/src/index.ts"
+      ],
+      "@nx-reference/shared/util/typescript": [
+        "libs/shared/util/typescript/src/index.ts"
+      ],
+      "@nx-reference/demo-angular/sensors/feature-sensor-overview": [
+        "libs/demo-angular/sensors/feature-sensor-overview/src/index.ts"
+      ],
+      "@nx-reference/shared/util/pagination": [
+        "libs/shared/util/pagination/src/index.ts"
+      ],
+      "@nx-reference/demo-angular/sensors/util": [
+        "libs/demo-angular/sensors/util/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
