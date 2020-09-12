@@ -5,16 +5,16 @@ import { Sensor, SensorType } from '@nx-reference/demo-api/sensors/interfaces';
 
 @Exclude()
 export class SensorDto implements Sensor {
-  @ApiProperty()
   @Expose({ name: '_id' })
+  @ApiProperty({ example: '5f5c80e5b581119c8f543c9b'})
   readonly id: string;
 
   @Expose()
-  @ApiProperty()
+  @ApiProperty({ example: 'sensor-0'})
   readonly name: string;
 
   @Expose()
-  @ApiProperty()
+  @ApiProperty({ example: '5.0'})
   readonly value: string;
 
   @Expose()
