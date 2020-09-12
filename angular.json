@@ -85,9 +85,7 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/demo-angular-web/jest.config.js",
-            "tsConfig": "apps/demo-angular-web/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/demo-angular-web/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       }
@@ -167,7 +165,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/demo-api/jest.config.js",
-            "tsConfig": "apps/demo-api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -219,7 +216,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/api/jest.config.js",
-            "tsConfig": "libs/shared/api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -243,7 +239,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/demo-api/sensors/api/jest.config.js",
-            "tsConfig": "libs/demo-api/sensors/api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -267,7 +262,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/demo-api/sensors/interfaces/jest.config.js",
-            "tsConfig": "libs/demo-api/sensors/interfaces/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -291,7 +285,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/demo-api/sensors/fixtures/jest.config.js",
-            "tsConfig": "libs/demo-api/sensors/fixtures/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
