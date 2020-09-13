@@ -16,12 +16,14 @@ Copy and rename .env-example to .env and provide values
   - bla-angular-desktop
   - bla-api
 - libs
-  - demo-angular-web
-    - feature1
-    - feature2
-  - demo-admin-angular-web
-    - feature1
-    - feature2
+  - demo-angular
+    - domain1
+      - feature1
+      - feature2
+  - demo-admin-angular
+    - domain1
+      - feature1
+      - feature2
   - demo-api
     - domain1
       - interfaces

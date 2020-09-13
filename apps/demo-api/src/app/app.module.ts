@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigType } from '@nestjs/config';
 
 import { DemoApiSensorsApiModule } from '@nx-reference/demo-api/sensors/api';
-import { SharedApiModule } from '@nx-reference/shared/api';
+import { SharedApiModule } from '@nx-reference/shared/api/core';
 
 import appConfig from '../config/app.config';
 

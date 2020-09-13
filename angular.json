@@ -31,6 +31,10 @@
                 {
                   "replace": "apps/demo-angular-web/src/environments/environment.ts",
                   "with": "apps/demo-angular-web/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "libs/shared/core/src/lib/build-specifics/index.ts",
+                  "with": "libs/shared/core/src/lib/build-specifics/index.prod.ts"
                 }
               ],
               "optimization": true,
@@ -198,29 +202,6 @@
         }
       }
     },
-    "shared-api": {
-      "root": "libs/shared/api",
-      "sourceRoot": "libs/shared/api/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["libs/shared/api/tsconfig.lib.json", "libs/shared/api/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/api/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/api/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "demo-api-sensors-api": {
       "root": "libs/demo-api/sensors/api",
       "sourceRoot": "libs/demo-api/sensors/api/src",
@@ -289,6 +270,379 @@
           }
         }
       }
+    },
+    "demo-angular-sensors-feature-shell": {
+      "projectType": "library",
+      "root": "libs/demo-angular/sensors/feature-shell",
+      "sourceRoot": "libs/demo-angular/sensors/feature-shell/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/demo-angular/sensors/feature-shell/tsconfig.lib.json", "libs/demo-angular/sensors/feature-shell/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/feature-shell/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/demo-angular/sensors/feature-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-sensors-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/sensors/data-access",
+      "sourceRoot": "libs/shared/sensors/data-access/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/shared/sensors/data-access/tsconfig.lib.json", "libs/shared/sensors/data-access/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/sensors/data-access/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/sensors/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-sensors-ui": {
+      "projectType": "library",
+      "root": "libs/shared/sensors/ui",
+      "sourceRoot": "libs/shared/sensors/ui/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/shared/sensors/ui/tsconfig.lib.json", "libs/shared/sensors/ui/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/sensors/ui/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/sensors/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-api-core": {
+      "root": "libs/shared/api/core",
+      "sourceRoot": "libs/shared/api/core/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/shared/api/core/tsconfig.lib.json", "libs/shared/api/core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/api/core/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/api/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-api-interfaces": {
+      "root": "libs/shared/api/interfaces",
+      "sourceRoot": "libs/shared/api/interfaces/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/shared/api/interfaces/tsconfig.lib.json", "libs/shared/api/interfaces/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/api/interfaces/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/api/interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-angular-sensors-feature-sensor-details": {
+      "projectType": "library",
+      "root": "libs/demo-angular/sensors/feature-sensor-details",
+      "sourceRoot": "libs/demo-angular/sensors/feature-sensor-details/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/demo-angular/sensors/feature-sensor-details/tsconfig.lib.json",
+              "libs/demo-angular/sensors/feature-sensor-details/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/feature-sensor-details/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/demo-angular/sensors/feature-sensor-details/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-custom-router-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/custom-router/data-access",
+      "sourceRoot": "libs/shared/custom-router/data-access/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/shared/custom-router/data-access/tsconfig.lib.json", "libs/shared/custom-router/data-access/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/custom-router/data-access/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/custom-router/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-core": {
+      "projectType": "library",
+      "root": "libs/shared/core",
+      "sourceRoot": "libs/shared/core/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/shared/core/tsconfig.lib.json", "libs/shared/core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/core/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-util-typescript": {
+      "root": "libs/shared/util/typescript",
+      "sourceRoot": "libs/shared/util/typescript/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/shared/util/typescript/tsconfig.lib.json", "libs/shared/util/typescript/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/util/typescript/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/util/typescript/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-angular-sensors-feature-sensor-overview": {
+      "projectType": "library",
+      "root": "libs/demo-angular/sensors/feature-sensor-overview",
+      "sourceRoot": "libs/demo-angular/sensors/feature-sensor-overview/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/demo-angular/sensors/feature-sensor-overview/tsconfig.lib.json",
+              "libs/demo-angular/sensors/feature-sensor-overview/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/feature-sensor-overview/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/demo-angular/sensors/feature-sensor-overview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-util-pagination": {
+      "root": "libs/shared/util/pagination",
+      "sourceRoot": "libs/shared/util/pagination/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/shared/util/pagination/tsconfig.lib.json", "libs/shared/util/pagination/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/util/pagination/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/util/pagination/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-angular-sensors-util": {
+      "root": "libs/demo-angular/sensors/util",
+      "sourceRoot": "libs/demo-angular/sensors/util/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/demo-angular/sensors/util/tsconfig.lib.json", "libs/demo-angular/sensors/util/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/util/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/demo-angular/sensors/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-sensors-feature-sensor-list": {
+      "projectType": "library",
+      "root": "libs/shared/sensors/feature-sensor-list",
+      "sourceRoot": "libs/shared/sensors/feature-sensor-list/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/shared/sensors/feature-sensor-list/tsconfig.lib.json", "libs/shared/sensors/feature-sensor-list/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/sensors/feature-sensor-list/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/sensors/feature-sensor-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-sensors-feature-sensor-info": {
+      "projectType": "library",
+      "root": "libs/shared/sensors/feature-sensor-info",
+      "sourceRoot": "libs/shared/sensors/feature-sensor-info/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": ["libs/shared/sensors/feature-sensor-info/tsconfig.lib.json", "libs/shared/sensors/feature-sensor-info/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/sensors/feature-sensor-info/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/sensors/feature-sensor-info/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
@@ -335,7 +689,8 @@
       "strict": true
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     }
   },
   "defaultProject": "demo-angular-web"

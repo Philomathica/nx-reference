@@ -11,6 +11,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
   const appConfiguration: ConfigType<typeof appConfig> = app.get(appConfig.KEY);
   app.setGlobalPrefix(appConfiguration.globalPathPrefix);
+  app.enableCors();
 
   // TODO: Swagger move to shared api
   const options = new DocumentBuilder().setTitle('Demo api').setDescription('Demo api application').setVersion('1.0').build();
