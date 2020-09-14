@@ -14,13 +14,18 @@ import { SensorListStore } from './sensor-list.store';
 export class SensorListComponent {
   sensors$: Observable<Sensor[]> = this.sensorsStore.sensors$;
   loading$: Observable<boolean> = this.sensorsStore.loading$;
+  pageIndex$: Observable<number> = this.sensorsStore.pageIndex$;
 
   @Input() set pageSize(value: number) {
-    this.sensorsStore.setPageSize(value);
+    if (value > 0) {
+      this.sensorsStore.setPageSize(value);
+    }
   }
 
   @Input() set pageIndex(value: number) {
-    this.sensorsStore.setPageIndex(value);
+    if (value >= 0) {
+      this.sensorsStore.setPageIndex(value);
+    }
   }
 
   constructor(private readonly sensorsStore: SensorListStore) {}

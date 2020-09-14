@@ -5,3 +5,23 @@
 <div *ngFor="let sensor of sensors$ | async">
   <a [routerLink]="['/sensors', sensor.id]"> {{ sensor.type }} - {{ sensor.name }} </a>
 </div>
+
+<div class="mt-2">
+  <label for="pagesize">Size</label>
+  <input
+    class="border ml-4"
+    name="pagesize"
+    #newPageSize
+    type="number"
+    placeholder="pagesize"
+    (change)="pageSize = +newPageSize.value"
+    min="1"
+    value="20"
+  />
+</div>
+
+<div class="mt-2" *ngrxLet="pageIndex$ as index">
+  Current Page: {{ index }}
+  <button class="btn btn-blue" type="button" (click)="pageIndex = (index ? index : 0) - 1">Previous Page</button>
+  <button class="btn btn-blue ml-4" type="button" (click)="pageIndex = (index ? index : 0) + 1">Next Page</button>
+</div>

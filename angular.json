@@ -13,8 +13,11 @@
       "prefix": "demo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "outputPath": "dist/apps/demo-angular-web",
             "index": "apps/demo-angular-web/src/index.html",
             "main": "apps/demo-angular-web/src/main.ts",
@@ -22,7 +25,7 @@
             "tsConfig": "apps/demo-angular-web/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/demo-angular-web/src/favicon.ico", "apps/demo-angular-web/src/assets"],
-            "styles": ["apps/demo-angular-web/src/styles.scss"],
+            "styles": ["apps/demo-angular-web/src/styles.scss", "libs/shared/ui/styles/src/lib/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -61,8 +64,11 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "browserTarget": "demo-angular-web:build"
           },
           "configurations": {
@@ -641,6 +647,29 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "shared-ui-styles": {
+      "root": "libs/shared/ui/styles",
+      "sourceRoot": "libs/shared/ui/styles/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["libs/shared/ui/styles/tsconfig.lib.json", "libs/shared/ui/styles/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui/styles/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/styles/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

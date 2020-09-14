@@ -34,7 +34,8 @@
       "@nx-reference/shared/util/pagination": ["libs/shared/util/pagination/src/index.ts"],
       "@nx-reference/demo-angular/sensors/util": ["libs/demo-angular/sensors/util/src/index.ts"],
       "@nx-reference/shared/sensors/feature-sensor-list": ["libs/shared/sensors/feature-sensor-list/src/index.ts"],
-      "@nx-reference/shared/sensors/feature-sensor-info": ["libs/shared/sensors/feature-sensor-info/src/index.ts"]
+      "@nx-reference/shared/sensors/feature-sensor-info": ["libs/shared/sensors/feature-sensor-info/src/index.ts"],
+      "@nx-reference/shared/ui/styles": ["libs/shared/ui/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
