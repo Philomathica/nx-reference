@@ -5,7 +5,7 @@
       "projectType": "application",
       "schematics": {
         "@nrwl/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       },
       "root": "apps/demo-angular-web",
@@ -24,8 +24,14 @@
             "polyfills": "apps/demo-angular-web/src/polyfills.ts",
             "tsConfig": "apps/demo-angular-web/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/demo-angular-web/src/favicon.ico", "apps/demo-angular-web/src/assets"],
-            "styles": ["apps/demo-angular-web/src/styles.scss", "libs/shared/ui/styles/src/lib/styles.scss"],
+            "assets": [
+              "apps/demo-angular-web/src/favicon.ico",
+              "apps/demo-angular-web/src/assets"
+            ],
+            "styles": [
+              "apps/demo-angular-web/src/styles.scss",
+              "libs/shared/ui/styles/src/lib/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -86,8 +92,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["apps/demo-angular-web/tsconfig.app.json", "apps/demo-angular-web/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/demo-angular-web/**/*"],
+            "tsConfig": [
+              "apps/demo-angular-web/tsconfig.app.json",
+              "apps/demo-angular-web/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-angular-web/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -122,8 +134,13 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["apps/demo-angular-web-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/demo-angular-web-e2e/**/*"]
+            "tsConfig": [
+              "apps/demo-angular-web-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-angular-web-e2e/**/*"
+            ]
           }
         }
       }
@@ -141,7 +158,9 @@
             "outputPath": "dist/apps/demo-api",
             "main": "apps/demo-api/src/main.ts",
             "tsConfig": "apps/demo-api/tsconfig.app.json",
-            "assets": ["apps/demo-api/src/assets"]
+            "assets": [
+              "apps/demo-api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -167,8 +186,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["apps/demo-api/tsconfig.app.json", "apps/demo-api/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/demo-api/**/*"]
+            "tsConfig": [
+              "apps/demo-api/tsconfig.app.json",
+              "apps/demo-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-api/**/*"
+            ]
           }
         },
         "test": {
@@ -202,8 +227,13 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["apps/demo-api-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/demo-api-e2e/**/*"]
+            "tsConfig": [
+              "apps/demo-api-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-api-e2e/**/*"
+            ]
           }
         }
       }
@@ -218,8 +248,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/demo-api/sensors/api/tsconfig.lib.json", "libs/demo-api/sensors/api/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/demo-api/sensors/api/**/*"]
+            "tsConfig": [
+              "libs/demo-api/sensors/api/tsconfig.lib.json",
+              "libs/demo-api/sensors/api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-api/sensors/api/**/*"
+            ]
           }
         },
         "test": {
@@ -241,8 +277,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/demo-api/sensors/interfaces/tsconfig.lib.json", "libs/demo-api/sensors/interfaces/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/demo-api/sensors/interfaces/**/*"]
+            "tsConfig": [
+              "libs/demo-api/sensors/interfaces/tsconfig.lib.json",
+              "libs/demo-api/sensors/interfaces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-api/sensors/interfaces/**/*"
+            ]
           }
         },
         "test": {
@@ -264,8 +306,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/demo-api/sensors/fixtures/tsconfig.lib.json", "libs/demo-api/sensors/fixtures/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/demo-api/sensors/fixtures/**/*"]
+            "tsConfig": [
+              "libs/demo-api/sensors/fixtures/tsconfig.lib.json",
+              "libs/demo-api/sensors/fixtures/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-api/sensors/fixtures/**/*"
+            ]
           }
         },
         "test": {
@@ -286,8 +334,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/demo-angular/sensors/feature-shell/tsconfig.lib.json", "libs/demo-angular/sensors/feature-shell/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/feature-shell/**/*"],
+            "tsConfig": [
+              "libs/demo-angular/sensors/feature-shell/tsconfig.lib.json",
+              "libs/demo-angular/sensors/feature-shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-angular/sensors/feature-shell/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -301,7 +355,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -314,8 +368,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/shared/sensors/data-access/tsconfig.lib.json", "libs/shared/sensors/data-access/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/sensors/data-access/**/*"],
+            "tsConfig": [
+              "libs/shared/sensors/data-access/tsconfig.lib.json",
+              "libs/shared/sensors/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/sensors/data-access/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -329,7 +389,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -342,8 +402,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/shared/sensors/ui/tsconfig.lib.json", "libs/shared/sensors/ui/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/sensors/ui/**/*"],
+            "tsConfig": [
+              "libs/shared/sensors/ui/tsconfig.lib.json",
+              "libs/shared/sensors/ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/sensors/ui/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -357,7 +423,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -371,8 +437,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/shared/api/core/tsconfig.lib.json", "libs/shared/api/core/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/api/core/**/*"]
+            "tsConfig": [
+              "libs/shared/api/core/tsconfig.lib.json",
+              "libs/shared/api/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/api/core/**/*"
+            ]
           }
         },
         "test": {
@@ -394,8 +466,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/shared/api/interfaces/tsconfig.lib.json", "libs/shared/api/interfaces/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/api/interfaces/**/*"]
+            "tsConfig": [
+              "libs/shared/api/interfaces/tsconfig.lib.json",
+              "libs/shared/api/interfaces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/api/interfaces/**/*"
+            ]
           }
         },
         "test": {
@@ -420,7 +498,10 @@
               "libs/demo-angular/sensors/feature-sensor-details/tsconfig.lib.json",
               "libs/demo-angular/sensors/feature-sensor-details/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/feature-sensor-details/**/*"],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-angular/sensors/feature-sensor-details/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -434,7 +515,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -447,8 +528,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/shared/custom-router/data-access/tsconfig.lib.json", "libs/shared/custom-router/data-access/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/custom-router/data-access/**/*"],
+            "tsConfig": [
+              "libs/shared/custom-router/data-access/tsconfig.lib.json",
+              "libs/shared/custom-router/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/custom-router/data-access/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -462,7 +549,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -475,8 +562,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/shared/core/tsconfig.lib.json", "libs/shared/core/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/core/**/*"],
+            "tsConfig": [
+              "libs/shared/core/tsconfig.lib.json",
+              "libs/shared/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/core/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -490,7 +583,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -504,8 +597,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/shared/util/typescript/tsconfig.lib.json", "libs/shared/util/typescript/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/util/typescript/**/*"]
+            "tsConfig": [
+              "libs/shared/util/typescript/tsconfig.lib.json",
+              "libs/shared/util/typescript/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/util/typescript/**/*"
+            ]
           }
         },
         "test": {
@@ -530,7 +629,10 @@
               "libs/demo-angular/sensors/feature-sensor-overview/tsconfig.lib.json",
               "libs/demo-angular/sensors/feature-sensor-overview/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/feature-sensor-overview/**/*"],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-angular/sensors/feature-sensor-overview/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -544,7 +646,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -558,8 +660,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/shared/util/pagination/tsconfig.lib.json", "libs/shared/util/pagination/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/util/pagination/**/*"]
+            "tsConfig": [
+              "libs/shared/util/pagination/tsconfig.lib.json",
+              "libs/shared/util/pagination/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/util/pagination/**/*"
+            ]
           }
         },
         "test": {
@@ -581,8 +689,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/demo-angular/sensors/util/tsconfig.lib.json", "libs/demo-angular/sensors/util/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/demo-angular/sensors/util/**/*"]
+            "tsConfig": [
+              "libs/demo-angular/sensors/util/tsconfig.lib.json",
+              "libs/demo-angular/sensors/util/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/demo-angular/sensors/util/**/*"
+            ]
           }
         },
         "test": {
@@ -603,8 +717,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/shared/sensors/feature-sensor-list/tsconfig.lib.json", "libs/shared/sensors/feature-sensor-list/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/sensors/feature-sensor-list/**/*"],
+            "tsConfig": [
+              "libs/shared/sensors/feature-sensor-list/tsconfig.lib.json",
+              "libs/shared/sensors/feature-sensor-list/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/sensors/feature-sensor-list/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -618,7 +738,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -631,8 +751,14 @@
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
-            "tsConfig": ["libs/shared/sensors/feature-sensor-info/tsconfig.lib.json", "libs/shared/sensors/feature-sensor-info/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/sensors/feature-sensor-info/**/*"],
+            "tsConfig": [
+              "libs/shared/sensors/feature-sensor-info/tsconfig.lib.json",
+              "libs/shared/sensors/feature-sensor-info/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/sensors/feature-sensor-info/**/*"
+            ],
             "linter": "eslint"
           }
         },
@@ -646,7 +772,7 @@
       },
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       }
     },
@@ -660,8 +786,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["libs/shared/ui/styles/tsconfig.lib.json", "libs/shared/ui/styles/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/styles/**/*"]
+            "tsConfig": [
+              "libs/shared/ui/styles/tsconfig.lib.json",
+              "libs/shared/ui/styles/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/styles/**/*"
+            ]
           }
         },
         "test": {
@@ -672,6 +804,189 @@
           }
         }
       }
+    },
+    "shared-ui-card": {
+      "projectType": "library",
+      "root": "libs/shared/ui/card",
+      "sourceRoot": "libs/shared/ui/card/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/card/tsconfig.lib.json",
+              "libs/shared/ui/card/tsconfig.spec.json",
+              "libs/shared/ui/card/.storybook/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/card/**/*"
+            ],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/card/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/ui/card/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/shared-ui-card",
+            "config": {
+              "configFolder": "libs/shared/ui/card/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "shared-ui-navbar": {
+      "projectType": "library",
+      "root": "libs/shared/ui/navbar",
+      "sourceRoot": "libs/shared/ui/navbar/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/navbar/tsconfig.lib.json",
+              "libs/shared/ui/navbar/tsconfig.spec.json",
+              "libs/shared/ui/navbar/.storybook/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/navbar/**/*"
+            ],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/navbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/ui/navbar/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/shared-ui-navbar",
+            "config": {
+              "configFolder": "libs/shared/ui/navbar/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "shared-ui-storybook": {
+      "projectType": "library",
+      "root": "libs/shared/ui/storybook",
+      "sourceRoot": "libs/shared/ui/storybook/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/storybook/tsconfig.lib.json",
+              "libs/shared/ui/storybook/tsconfig.spec.json",
+              "libs/shared/ui/storybook/.storybook/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/storybook/**/*"
+            ],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/storybook/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/ui/storybook/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/shared-ui-storybook",
+            "config": {
+              "configFolder": "libs/shared/ui/storybook/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
