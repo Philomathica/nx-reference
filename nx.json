@@ -89,6 +89,9 @@
     },
     "shared-sensors-feature-sensor-info": {
       "tags": ["scope:shared", "type:feature"]
+    },
+    "shared-ui-styles": {
+      "tags": ["scope:shared", "type:ui"]
     }
   }
 }
