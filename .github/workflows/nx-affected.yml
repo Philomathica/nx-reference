@@ -48,3 +48,5 @@ jobs:
         if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
         with:
           path: coverage
+      - run: yarn semantic-release
+        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}

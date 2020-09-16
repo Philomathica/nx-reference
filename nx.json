@@ -18,12 +18,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "OWQ4NjI0OTItN2M3NS00MDgzLTg3MzctNTM2MWJkZjkyZDVkfHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -31,152 +26,81 @@
   },
   "projects": {
     "demo-angular-web": {
-      "tags": [
-        "scope:demo",
-        "type:app"
-      ]
+      "tags": ["scope:demo", "type:app"]
     },
     "demo-angular-web-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "demo-angular-web"
-      ]
+      "implicitDependencies": ["demo-angular-web"]
     },
     "demo-api": {
-      "tags": [
-        "scope:demo",
-        "type:api-app"
-      ]
+      "tags": ["scope:demo", "type:api-app"]
     },
     "demo-api-sensors-api": {
-      "tags": [
-        "scope:demo-api",
-        "type:api-feature"
-      ]
+      "tags": ["scope:demo-api", "type:api-feature"]
     },
     "demo-api-sensors-interfaces": {
-      "tags": [
-        "scope:demo-api",
-        "type:interfaces"
-      ]
+      "tags": ["scope:demo-api", "type:interfaces"]
     },
     "demo-api-e2e": {
       "tags": [],
       "implicitDependencies": []
     },
     "demo-api-sensors-fixtures": {
-      "tags": [
-        "scope:demo-api",
-        "type:fixtures"
-      ]
+      "tags": ["scope:demo-api", "type:fixtures"]
     },
     "demo-angular-sensors-feature-shell": {
-      "tags": [
-        "scope:demo-angular",
-        "type:feature"
-      ]
+      "tags": ["scope:demo-angular", "type:feature"]
     },
     "shared-sensors-data-access": {
-      "tags": [
-        "scope:shared",
-        "type:data-access"
-      ]
+      "tags": ["scope:shared", "type:data-access"]
     },
     "shared-sensors-ui": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     },
     "shared-api-core": {
-      "tags": [
-        "scope:shared",
-        "type:api-feature"
-      ]
+      "tags": ["scope:shared", "type:api-feature"]
     },
     "shared-api-interfaces": {
-      "tags": [
-        "scope:shared",
-        "type:interfaces"
-      ]
+      "tags": ["scope:shared", "type:interfaces"]
     },
     "demo-angular-sensors-feature-sensor-details": {
-      "tags": [
-        "scope:demo-angular",
-        "type:feature"
-      ]
+      "tags": ["scope:demo-angular", "type:feature"]
     },
     "shared-custom-router-data-access": {
-      "tags": [
-        "scope:shared",
-        "type:data-access"
-      ]
+      "tags": ["scope:shared", "type:data-access"]
     },
     "shared-core": {
-      "tags": [
-        "scope:shared",
-        "type:feature"
-      ]
+      "tags": ["scope:shared", "type:feature"]
     },
     "shared-util-typescript": {
-      "tags": [
-        "scope:shared",
-        "type:util"
-      ]
+      "tags": ["scope:shared", "type:util"]
     },
     "demo-angular-sensors-feature-sensor-overview": {
-      "tags": [
-        "scope:demo-angular",
-        "type:feature"
-      ]
+      "tags": ["scope:demo-angular", "type:feature"]
     },
     "shared-util-pagination": {
-      "tags": [
-        "scope:shared",
-        "type:util"
-      ]
+      "tags": ["scope:shared", "type:util"]
     },
     "demo-angular-sensors-util": {
-      "tags": [
-        "scope:shared",
-        "type:util"
-      ]
+      "tags": ["scope:shared", "type:util"]
     },
     "shared-sensors-feature-sensor-list": {
-      "tags": [
-        "scope:shared",
-        "type:feature"
-      ]
+      "tags": ["scope:shared", "type:feature"]
     },
     "shared-sensors-feature-sensor-info": {
-      "tags": [
-        "scope:shared",
-        "type:feature"
-      ]
+      "tags": ["scope:shared", "type:feature"]
     },
     "shared-ui-styles": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     },
     "shared-ui-card": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     },
     "shared-ui-navbar": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     },
     "shared-ui-storybook": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     }
   }
 }
