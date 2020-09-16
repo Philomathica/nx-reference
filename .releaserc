@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    "@semantic-release/changelog",
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/npm",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/git",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./tools/scripts/prepare-release.sh",
+        "publishCmd": "./tools/scripts/publish-release.sh"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "githubUrl": "https://github.tools.digital.engie.com/api/v3",
+        "assets": ["dist/zips/*.zip"]
+      }
+    ]
+  ]
+}
