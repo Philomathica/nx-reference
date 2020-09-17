@@ -41,12 +41,14 @@ jobs:
       - run: yarn affected:test --base=${{ env.NX_BASE }} --codeCoverage
       - run: yarn affected:e2e --base=${{ env.NX_BASE }} --headless
       - uses: actions/upload-artifact@v2
-        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
+        if: ${{ env.GITHUB_REF }} == 'refs/heads/master'
         with:
           path: dist
       - uses: actions/upload-artifact@v2
-        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
+        if: ${{ env.GITHUB_REF }} == 'refs/heads/master'
         with:
           path: coverage
       - run: yarn semantic-release
-        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
+        if: ${{ env.GITHUB_REF }} == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
