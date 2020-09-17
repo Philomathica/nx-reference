@@ -43,10 +43,12 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: ${{ env.GITHUB_REF }} == 'refs/heads/master'
         with:
+          name: dist
           path: dist
       - uses: actions/upload-artifact@v2
         if: ${{ env.GITHUB_REF }} == 'refs/heads/master'
         with:
+          name: coverage
           path: coverage
       - run: yarn semantic-release
         if: ${{ env.GITHUB_REF }} == 'refs/heads/master'
