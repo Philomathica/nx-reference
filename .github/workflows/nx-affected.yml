@@ -40,7 +40,7 @@ jobs:
           echo "::set-env name=NX_BASE::$NX_BASE"
       - run: yarn install --frozen-lockfile
       - run: yarn nx workspace-lint
-      - run: yarn affected:build --base=${{ env.NX_BASE }}
+      - run: yarn affected:build --prod --all
       - run: yarn affected:lint --base=${{ env.NX_BASE }}
       - run: yarn affected:test --base=${{ env.NX_BASE }} --codeCoverage
       - run: yarn affected:e2e --base=${{ env.NX_BASE }} --headless
