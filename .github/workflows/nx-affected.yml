@@ -21,13 +21,22 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      - name: Cache yarn cache
+        uses: actions/cache@v2
+        id: cache-yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
       - name: Set NX Base Branch
         run: |
           if [[ $GITHUB_REF == refs/heads/master ]]
@@ -39,8 +48,11 @@ jobs:
           echo "Base => $NX_BASE"
           echo "::set-env name=NX_BASE::$NX_BASE"
       - run: yarn install --frozen-lockfile
+        if: |
+          steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
+          steps.cache-node-modules.outputs.cache-hit != 'true'
       - run: yarn nx workspace-lint
-      - run: yarn affected:build --prod --all
+      - run: yarn affected:build --base=${{ env.NX_BASE }}
       - run: yarn affected:lint --base=${{ env.NX_BASE }}
       - run: yarn affected:test --base=${{ env.NX_BASE }} --codeCoverage
       - run: yarn affected:e2e --base=${{ env.NX_BASE }} --headless
