@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { HealthCheck, MongooseHealthIndicator, HealthCheckService } from '@nestjs/terminus';
+import { HealthCheck, MongooseHealthIndicator, HealthCheckService, HealthCheckResult } from '@nestjs/terminus';
 
 @Controller('health')
 export class SharedApiHealthController {
@@ -7,7 +7,7 @@ export class SharedApiHealthController {
 
   @Get()
   @HealthCheck()
-  check() {
+  check(): Promise<HealthCheckResult> {
     return this.health.check([() => this.mongoose.pingCheck('demo-db')]);
   }
 }

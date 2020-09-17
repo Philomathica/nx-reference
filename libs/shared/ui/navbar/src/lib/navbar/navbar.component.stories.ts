@@ -1,15 +1,15 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
 import { NavbarComponent } from './navbar.component';
 
 export default {
-  title: 'NavbarComponent'
-}
+  title: 'NavbarComponent',
+};
 
 export const primary = () => ({
   moduleMetadata: {
-    imports: []
+    imports: [],
   },
   component: NavbarComponent,
-  props: {
-  }
-})
+  props: {},
+});

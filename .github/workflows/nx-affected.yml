@@ -1,0 +1,52 @@
+name: Nx Affected CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache@v2
+        with:
+          path: |
+            '**/node_modules'
+            /home/runner/.cache/Cypress
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Set NX Base Branch
+        run: |
+          if [[ $GITHUB_REF == refs/heads/master ]]
+          then
+            export NX_BASE=origin/master~1
+          else
+            export NX_BASE=origin/master
+          fi
+          echo "Base => $NX_BASE"
+          echo "::set-env name=NX_BASE::$NX_BASE"
+      - run: yarn install --frozen-lockfile
+      - run: yarn nx workspace-lint
+      - run: yarn affected:build --base=${{ env.NX_BASE }}
+      - run: yarn affected:lint --base=${{ env.NX_BASE }}
+      - run: yarn affected:test --base=${{ env.NX_BASE }} --codeCoverage
+      - run: yarn affected:e2e --base=${{ env.NX_BASE }} --headless
+      - uses: actions/upload-artifact@v2
+        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
+        with:
+          path: dist
+      - uses: actions/upload-artifact@v2
+        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
+        with:
+          path: coverage
+      - run: yarn semantic-release
+        if: ${{ env.GITHUB_REF == 'refs/heads/master' }}
