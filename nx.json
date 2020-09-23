@@ -90,9 +90,6 @@
     "shared-sensors-feature-sensor-info": {
       "tags": ["scope:shared", "type:feature"]
     },
-    "shared-ui-styles": {
-      "tags": ["scope:shared", "type:ui"]
-    },
     "shared-ui-card": {
       "tags": ["scope:shared", "type:ui"]
     },
@@ -101,6 +98,9 @@
     },
     "shared-ui-storybook": {
       "tags": ["scope:shared", "type:ui"]
+    },
+    "shared-styles": {
+      "tags": ["scope:shared", "type:styles"]
     }
   }
 }
