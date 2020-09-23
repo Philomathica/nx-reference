@@ -828,24 +828,7 @@
       "root": "libs/shared/styles",
       "sourceRoot": "libs/shared/styles/src",
       "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["libs/shared/styles/tsconfig.lib.json", "libs/shared/styles/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/styles/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/styles/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
+      "schematics": {}
     }
   },
   "cli": {
