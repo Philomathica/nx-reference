@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/LuukMoret/nx-reference/compare/v1.1.0...v1.2.0) (2020-09-23)
+
+
+### Features
+
+* **packages:** upgrade packages ([d81de22](https://github.com/LuukMoret/nx-reference/commit/d81de223537165d1fcf1bc184cca62cdc7b1356e))
+* **shared:** move ui lib ([cb1ca1a](https://github.com/LuukMoret/nx-reference/commit/cb1ca1a0b61655ba4e9e4c74cdbe17e24ecb1174))
+
 # [1.1.0](https://github.com/LuukMoret/nx-reference/compare/v1.0.0...v1.1.0) (2020-09-17)
 
 
