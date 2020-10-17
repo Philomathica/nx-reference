@@ -48,7 +48,7 @@ jobs:
             export NX_BASE=origin/master
           fi
           echo "Base => $NX_BASE"
-          echo "::set-env name=NX_BASE::$NX_BASE"
+          echo "NX_BASE=$NX_BASE" >> $GITHUB_ENV
       - run: yarn install --frozen-lockfile
         if: |
           steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
