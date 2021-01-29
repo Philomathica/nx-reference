@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/LuukMoret/nx-reference/compare/v1.3.0...v1.4.0) (2021-01-29)
+
+
+### Features
+
+* **packages:** upgrade packages ([e389837](https://github.com/LuukMoret/nx-reference/commit/e389837c57a5ccf8e3d20c9068ba74c043952f67))
+
 # [1.3.0](https://github.com/LuukMoret/nx-reference/compare/v1.2.0...v1.3.0) (2020-10-17)
 
 
