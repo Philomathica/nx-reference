@@ -8,6 +8,16 @@
 * upgrade packages ([991ef5b](https://github.com/LuukMoret/nx-reference/commit/991ef5b603089f1cd9bafa3af558da8d49d5b092))
 * **packages:** upgrade packages ([52b8637](https://github.com/LuukMoret/nx-reference/commit/52b8637f176b158dba2f94683eaa78aa0b53cb5a))
 
+# [1.5.0](https://github.com/LuukMoret/nx-reference/compare/v1.4.0...v1.5.0) (2021-05-01)
+
+
+### Features
+
+* trigger build ([d4b21f7](https://github.com/LuukMoret/nx-reference/commit/d4b21f77edee594cd3058227be20cf5a03074bab))
+* trigger build ([41fb784](https://github.com/LuukMoret/nx-reference/commit/41fb784b835818ec5df090558a566537ebd17c4e))
+* upgrade packages ([991ef5b](https://github.com/LuukMoret/nx-reference/commit/991ef5b603089f1cd9bafa3af558da8d49d5b092))
+* **packages:** upgrade packages ([52b8637](https://github.com/LuukMoret/nx-reference/commit/52b8637f176b158dba2f94683eaa78aa0b53cb5a))
+
 # [1.5.0](https://github.com/LuukMoret/nx-reference/compare/v1.4.0...v1.5.0) (2021-03-11)
 
 
